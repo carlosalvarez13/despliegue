@@ -2,7 +2,7 @@ on:
   workflow_run:
     workflows: [Test]
     types: [completed]
-código : jobs:
+jobs:
   deploy:
     name: Build
     runs-on: ubuntu-latest
