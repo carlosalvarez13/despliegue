@@ -1,12 +1,12 @@
 on:
   workflow_run:
-    workflows: [Test]
+    workflows: [Node.js CI]
     types: [completed]
 jobs:
   deploy:
     name: Build
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    if: ${{ github.event.workflow_run.conclusion }} == 'success' 
     permissions:
       id-token: write
     steps:
